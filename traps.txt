@@ -1,0 +1,18 @@
+if ($conn->query($sqlInsert) === TRUE) {
+        echo "New record created successfully";
+      } else {
+        echo "Error: " . $sqlInsert . "<br>" . $conn->error;
+      }
+          LA SEZIONE SEGUENTE è SUDDIVISA DALLA PRIMA E PUò ESSERE USATA ANCHE PER ADMIN
+                                                    $sqlselect = "SELECT id,psw FROM CLIENTE";
+                                                      $result = $conn->query($sqlselect);
+
+                                                      if ($result->num_rows > 0) {
+                                                          while($row = $result->fetch_assoc()) {
+                                                      echo "\n id: " . $row["id"]. " - psw: " . $row["psw"].  "<br>";
+                                                    }
+                                                  } else {
+                                                    echo "0 results";
+                                                  }
+
+    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ verifica presenza dati in database cliente.
